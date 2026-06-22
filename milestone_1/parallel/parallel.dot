@@ -1,0 +1,15 @@
+digraph pastafarianism {
+ordering=out;
+graph [fontname="times-roman"];
+node [fontname="times-roman"];
+edge [fontname="times-roman"];
+Parallel [label="Parallel\nSuccessOnOne", shape=parallelogram, style=filled, fillcolor=gold, fontsize=9, fontcolor=black];
+Context [label=Context, shape=ellipse, style=filled, fillcolor=gray, fontsize=9, fontcolor=black];
+Parallel -> Context;
+Sequence [label="Ⓜ Sequence", shape=box, style=filled, fillcolor=orange, fontsize=9, fontcolor=black];
+Parallel -> Sequence;
+"Action 1" [label="Action 1", shape=ellipse, style=filled, fillcolor=gray, fontsize=9, fontcolor=black];
+Sequence -> "Action 1";
+"Action 2" [label="Action 2", shape=ellipse, style=filled, fillcolor=gray, fontsize=9, fontcolor=black];
+Sequence -> "Action 2";
+}
