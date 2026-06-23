@@ -1,0 +1,34 @@
+digraph pastafarianism {
+ordering=out;
+graph [fontname="times-roman"];
+node [fontname="times-roman"];
+edge [fontname="times-roman"];
+Blackboard [label="Ⓜ Blackboard", shape=box, style=filled, fillcolor=orange, fontsize=9, fontcolor=black];
+"Set Nested" [label="Set Nested", shape=ellipse, style=filled, fillcolor=gray, fontsize=9, fontcolor=black];
+Blackboard -> "Set Nested";
+Writer [label=Writer, shape=ellipse, style=filled, fillcolor=gray, fontsize=9, fontcolor=black];
+Blackboard -> Writer;
+"Check Nested Foo" [label="Check Nested Foo", shape=ellipse, style=filled, fillcolor=gray, fontsize=9, fontcolor=black];
+Blackboard -> "Check Nested Foo";
+ParamsAndState [label=ParamsAndState, shape=ellipse, style=filled, fillcolor=gray, fontsize=9, fontcolor=black];
+Blackboard -> ParamsAndState;
+"/dude" -> Writer [color=green, constraint=false, weight=0];
+Configuration -> "/dude" [color=blue, constraint=false, weight=0];
+Writer -> "/spaghetti" [color=blue, constraint=false, weight=0];
+ParamsAndState -> "/state/current_speed" [color=blue, constraint=false, weight=0];
+"/nested" -> "Check Nested Foo" [color=green, constraint=false, weight=0];
+"Set Nested" -> "/nested" [color=blue, constraint=false, weight=0];
+"/parameters/default_speed" -> ParamsAndState [color=green, constraint=false, weight=0];
+Configuration -> "/parameters/default_speed" [color=deepskyblue, constraint=false, weight=0];
+subgraph Blackboard {
+id=Blackboard;
+label=Blackboard;
+rank=sink;
+Configuration [label=Configuration, shape=ellipse, style=filled, color=blue, fillcolor=gray, fontsize=7, fontcolor=blue];
+"/dude" [label="/dude: Bob", shape=box, style=filled, color=blue, fillcolor=white, fontsize=8, fontcolor=blue, width=0, height=0, fixedsize=false];
+"/spaghetti" [label="/spaghetti: -", shape=box, style=filled, color=blue, fillcolor=white, fontsize=8, fontcolor=blue, width=0, height=0, fixedsize=false];
+"/state/current_speed" [label="/state/current_speed: -", shape=box, style=filled, color=blue, fillcolor=white, fontsize=8, fontcolor=blue, width=0, height=0, fixedsize=false];
+"/nested" [label="/nested: -", shape=box, style=filled, color=blue, fillcolor=white, fontsize=8, fontcolor=blue, width=0, height=0, fixedsize=false];
+"/parameters/default_speed" [label="/parameters/default_speed: 30.0", shape=box, style=filled, color=blue, fillcolor=white, fontsize=8, fontcolor=blue, width=0, height=0, fixedsize=false];
+}
+}
