@@ -13,4 +13,4 @@ ros2 run bt_with_turtlesim bt_runner
 Ubah ubah parameter x dan y yang ada di `main()` pada [bt_runner.py](bt_with_turtlesim/bt_runner.py) untuk membuat turtle berjalan ke titik tsb.
 
 ## Hasil
-![Turtlesim](png_turtle/image.png)
+![Turtlesim](png_turtlesim/image.png)
