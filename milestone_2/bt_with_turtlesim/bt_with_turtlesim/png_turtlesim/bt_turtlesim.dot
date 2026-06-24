@@ -1,0 +1,27 @@
+digraph pastafarianism {
+ordering=out;
+graph [fontname="times-roman"];
+node [fontname="times-roman"];
+edge [fontname="times-roman"];
+"Ke Goal" [fillcolor=orange, fontcolor=black, fontsize=9, label="Ke Goal", shape=box, style=filled];
+"Pose to BB" [fillcolor=gray, fontcolor=black, fontsize=9, label="Pose to BB", shape=ellipse, style=filled];
+"Ke Goal" -> "Pose to BB";
+Navigasi [fillcolor=cyan, fontcolor=black, fontsize=9, label=Navigasi, shape=octagon, style=filled];
+"Ke Goal" -> Navigasi;
+"Sudah sampai target?" [fillcolor=gray, fontcolor=black, fontsize=9, label="Sudah sampai target?", shape=ellipse, style=filled];
+Navigasi -> "Sudah sampai target?";
+"MoveTo (maks 8s)" [fillcolor=ghostwhite, fontcolor=black, fontsize=9, label="MoveTo (maks 8s)", shape=ellipse, style=filled];
+Navigasi -> "MoveTo (maks 8s)";
+"Gerak ke Goal" [fillcolor=gray, fontcolor=black, fontsize=9, label="Gerak ke Goal", shape=ellipse, style=filled];
+"MoveTo (maks 8s)" -> "Gerak ke Goal";
+"/pose" -> "Gerak ke Goal"  [color=green, constraint=False, weight=0];
+"/pose" -> "Sudah sampai target?"  [color=green, constraint=False, weight=0];
+"Pose to BB" -> "/pose"  [color=blue, constraint=False, weight=0];
+subgraph Blackboard {
+id=Blackboard;
+label=Blackboard;
+rank=sink;
+"/pose" [color=blue, fillcolor=white, fixedsize=False, fontcolor=blue, fontsize=8, height=0, label="/pose: None", shape=box, style=filled, width=0];
+}
+
+}

@@ -14,3 +14,6 @@ Ubah ubah parameter x dan y yang ada di `main()` pada [bt_runner.py](bt_with_tur
 
 ## Hasil
 ![Turtlesim](png_turtlesim/image.png)
+
+## Wujud Tree
+![Tree](png_turtlesim/bt_turtlesim.png)

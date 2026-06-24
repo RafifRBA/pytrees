@@ -53,7 +53,7 @@ def main():
     # Buat node ROS2 dulu, lalu pass ke tree
     node = rclpy.create_node("bt_runner")
 
-    root = buat_tree(node, 8.6, 6.0) # Ubah ubah param x target dan y target disini
+    root = buat_tree(node, 10.6, 3.0) # Ubah ubah param x target dan y target disini
 
     tree = py_trees_ros.trees.BehaviourTree(
         root=root,
@@ -66,6 +66,12 @@ def main():
         print(f"Gagal setup tree: {e}")
         rclpy.shutdown()
         return
+    
+    # py_trees.display.render_dot_tree(
+    #     root=root,
+    #     name="bt_turtlesim",
+    #     with_blackboard_variables=True
+    # )
 
     tree.tick_tock(period_ms=500)  # tick tiap 500ms
 
